@@ -1,0 +1,1 @@
+Map ScriptAddress = {"c55R9RxIzkcjOLyxK3ZcQDnPrWl1":"https://script.google.com/macros/s/AKfycbyTR5edw9j0iTCRJ_C8iDjl1h4Kbs93MKejHfZNXTB0zTSqBteb8kY6dRTWqi9gWcPd/exec"};
