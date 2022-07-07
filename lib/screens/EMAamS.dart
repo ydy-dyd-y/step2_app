@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:conditional_questions/conditional_questions.dart';
+import 'package:survey_pmdd/screens/boardam.dart';
 
 import 'resources.dart';
 import 'package:intl/intl.dart';
@@ -14,9 +15,9 @@ import 'package:survey_pmdd/model/api_sheets.dart';
 
 
 
-class EMAam extends StatelessWidget {
+class EMAamS extends StatelessWidget {
 
-  const EMAam({Key? key}) : super(key: key);
+  const EMAamS({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,19 +26,19 @@ class EMAam extends StatelessWidget {
         backgroundColor: Colors.redAccent[100],
         title: Text('Daily Checklist'),
       ),
-      body: MyEMAam(),
+      body: MyEMAamS(),
     );
   }
 }
 
-class MyEMAam extends StatefulWidget {
-  const MyEMAam({Key? key}) : super(key: key);
+class MyEMAamS extends StatefulWidget {
+  const MyEMAamS({Key? key}) : super(key: key);
 
   @override
-  _MyEMAam createState() => _MyEMAam();
+  _MyEMAamS createState() => _MyEMAamS();
 }
 
-class _MyEMAam extends State<MyEMAam> {
+class _MyEMAamS extends State<MyEMAamS> {
 
   final _key = GlobalKey<QuestionFormState>();
 //
@@ -65,7 +66,7 @@ class _MyEMAam extends State<MyEMAam> {
     return Scaffold(
       body: ConditionalQuestions(
           key: _key,
-          children: questions1_2_1(),
+          children: questions1_2_0(),
           trailing: [
             MaterialButton(
               color: Colors.redAccent[100],
@@ -73,9 +74,9 @@ class _MyEMAam extends State<MyEMAam> {
               child: Text("저장"),
               onPressed: () async {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => EMAamNext())
+                    context, MaterialPageRoute(builder: (context) => Boardam())
                 );
-                await SurvSheetsApi.insertamM(_key.currentState!.toMap());
+                await SurvSheetsApi.insertamS(_key.currentState!.toMap());
 
               },
             )

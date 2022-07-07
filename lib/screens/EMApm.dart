@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:conditional_questions/conditional_questions.dart';
-import 'package:survey_pmdd/screens/id.dart';
+import 'package:survey_pmdd/screens/boardam.dart';
 
 import 'resources.dart';
 import 'package:intl/intl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'EMApm_next.dart';
+import 'boardpm.dart';
 
 import '/form_controller.dart';
 import '/model/user.dart';
@@ -71,7 +71,7 @@ class _MyEMApm extends State<MyEMApm> {
               child: Text("저장"),
               onPressed: () async {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => EMApmNext())
+                    context, MaterialPageRoute(builder: (context) => Boardpm())
                 );
                 await SurvSheetsApi.insertpmE(_key.currentState!.toMap());
 

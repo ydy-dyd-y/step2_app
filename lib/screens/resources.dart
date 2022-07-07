@@ -4,7 +4,7 @@ import 'package:conditional_questions/conditional_questions.dart';
 List<Question> questions1() {
   return [
     PolarQuestion(
-        question: "출혈이 있습니까?",
+        question: "오늘 출혈이 있었습니까?",
         answers: ["있음", "없음"],
         isMandatory: true),
   ];
@@ -111,35 +111,39 @@ List<Question> questions1_1() {
   ];
 }
 ///
-
-List<Question> questions1_2_1() {
+List<Question> questions1_2_0() {
   return [
     PolarQuestion(
         question: "지난 밤 잠을 잘 잤나요?",
         answers: ["-3 : 전혀 그렇지 않다", "-2", "-1", "0", "1", "2", "3 : 매우 잘 잤다"],
         isMandatory: true),
+  ];
+}
+
+List<Question> questions1_2_1() {
+  return [
     PolarQuestion(
-        question: "열정적인",
+        question: "1. 열정적인",
         answers: ["0 : 전혀 그렇지 않다", "1", "2", "3", "4 : 매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "쾌활한",
+        question: "2. 쾌활한",
         answers: ["0 : 전혀 그렇지 않다", "1", "2", "3", "4 : 매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "편안한",
+        question: "3. 편안한",
         answers: ["0 : 전혀 그렇지 않다", "1", "2", "3", "4 : 매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "불안한",
+        question: "4. 불안한",
         answers: ["0 : 전혀 그렇지 않다", "1", "2", "3", "4 : 매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "슬픈",
+        question: "5. 슬픈",
         answers: ["0 : 전혀 그렇지 않다", "1", "2", "3", "4 : 매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "예민한",
+        question: "6. 예민한",
         answers: ["0 : 전혀 그렇지 않다", "1", "2", "3", "4 : 매우 그렇다"],
         isMandatory: true),
   ];
@@ -233,31 +237,31 @@ List<Question> questions1_2_3() {
 List<Question> questions1_2_4() {
   return [
     PolarQuestion(
-        question: "열정적인",
+        question: "1. 열정적인",
         answers: ["0 : 전혀 그렇지 않다", "1", "2", "3", "4 : 매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "쾌활한",
+        question: "2. 쾌활한",
         answers: ["0 : 전혀 그렇지 않다", "1", "2", "3", "4 : 매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "편안한",
+        question: "3. 편안한",
         answers: ["0 : 전혀 그렇지 않다", "1", "2", "3", "4 : 매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "불안한",
+        question: "4. 불안한",
         answers: ["0 : 전혀 그렇지 않다", "1", "2", "3", "4 : 매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "슬픈",
+        question: "5. 슬픈",
         answers: ["0 : 전혀 그렇지 않다", "1", "2", "3", "4 : 매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "예민한",
+        question: "6. 예민한",
         answers: ["0 : 전혀 그렇지 않다", "1", "2", "3", "4 : 매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "오늘 하루동안 \n아래 증상들로 인해 얼마나 지장을 받았나요? \n 1. 흥미나 재미가 없었음 \n2.우울하거나 희망이 없는 느낌\n3.지치거나 에너지가 떨어짐\n4.예민함, 날이 서있음\n4.걱정을 계속하고 멈추기가 어려움",
+        question: "오늘 하루동안 \n아래 증상들로 인해 얼마나 지장을 받았나요? \n1. 흥미나 재미가 없었음 \n2.우울하거나 희망이 없는 느낌\n3.지치거나 에너지가 떨어짐\n4.예민함, 날이 서있음\n4.걱정을 계속하고 멈추기가 어려움",
         answers: ["0 : 전혀 지장이 없었다", "1", "2", "3", "4", "5 : 매우 지장을 받았다"],
         isMandatory: true),
   ];

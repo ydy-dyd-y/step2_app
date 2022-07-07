@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:conditional_questions/conditional_questions.dart';
-import 'package:survey_pmdd/screens/id.dart';
+import 'package:survey_pmdd/screens/boardam.dart';
 
 import 'resources.dart';
 import 'package:intl/intl.dart';

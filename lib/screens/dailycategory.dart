@@ -2,7 +2,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:conditional_questions/conditional_questions.dart';
-import 'package:survey_pmdd/screens/id.dart';
+import 'package:survey_pmdd/screens/boardam.dart';
 
 import 'package:survey_pmdd/model/api_sheets.dart';
 import 'resources.dart';
@@ -10,7 +10,7 @@ import 'nextsurv.dart';
 import 'package:intl/intl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'EMAam.dart';
+import 'EMAamS.dart';
 import 'daily.dart';
 
 
@@ -29,7 +29,7 @@ class DailyCate extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => EMAam()));
+                    MaterialPageRoute(builder: (context) => EMAamS()));
               },
               child: Text("Morning Check"),
               style: ElevatedButton.styleFrom(
