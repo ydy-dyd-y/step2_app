@@ -25,20 +25,20 @@ class _BoardamState extends State<Boardam> {
               '현재 기분/느낌을',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 32,
+                fontSize: 28,
               ),
               ),
             Text(
               '다음에 제시될 6가지 측면에서',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 32,
+                fontSize: 28,
               ),
               ),
             Text('점수를 매겨주세요',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 32,
+                fontSize: 28,
               ),
               ),
             MaterialButton(

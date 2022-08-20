@@ -195,7 +195,7 @@ List<Question> questions1_2_3() {
   return [
     PolarQuestion(
         question: "오늘 있을 거라고 예상했던 그 활동이 일어났나요\n(그 활동을 했나요)?",
-        answers: ["예", "아니오"],
+        answers: ["예", "아니요"],
         isMandatory: true),
     PolarQuestion(
         question: "그 활동이 일어났거나 일어나지 않은 것에 대해 \n얼마나 아쉬운가요? \n혹은 그 활동을 했거나 하지 않았던 것에 대해 \n얼마나 후회하나요?",
@@ -207,11 +207,11 @@ List<Question> questions1_2_3() {
         isMandatory: true),
     PolarQuestion(
         question: "그 활동으로 인해 얼마나 스트레스 받았나요?",
-        answers: ["-4 : 매우 스트레스 받을 것 같은", "-3", "-2", "-1", "0", "1", "2", "3", "4 : 전혀 스트레스를 받을 것 같지 않은"],
+        answers: ["-4 : 매우 스트레스 받음", "-3", "-2", "-1", "0", "1", "2", "3", "4 : 전혀 스트레스를 받지 않음"],
         isMandatory: true),
     NestedQuestion(
         question: "(좋은 일이든 안좋은 일이든지 상관없이)\n오늘 있을 거라고 예상하지 못했던 일이 있었나요?",
-        answers: ["예", "아니오"],
+        answers: ["예", "아니요"],
         isMandatory: true,
         children: {
           '예' : [
@@ -225,7 +225,7 @@ List<Question> questions1_2_3() {
                 isMandatory: true),
             PolarQuestion(
                 question: "예상치 못했던 일로 인해 얼마나 스트레스 받았나요?",
-                answers: ["-4 : 매우 스트레스 받을 것 같은", "-3", "-2", "-1", "0", "1", "2", "3", "4 : 전혀 스트레스를 받을 것 같지 않은"],
+                answers: ["-4 : 매우 스트레스 받음", "-3", "-2", "-1", "0", "1", "2", "3", "4 : 전혀 스트레스를 받지 않음"],
                 isMandatory: true),
           ]
         }
@@ -316,7 +316,7 @@ List<Question> questions2_1() {
 List<Question> questions2_2() {
   return [
     PolarQuestion(
-        question: "예상치 못한 일이 생긴다면 기분이 나빠질 것 같다",
+        question: "예상치 못한 일이 생긴다면 기분이 나빠질 것 같다.",
         answers: ["전혀 아니다", "거의 아니다", "보통이다", "그렇다", "매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
@@ -336,7 +336,7 @@ List<Question> questions2_2() {
         answers: ["전혀 아니다", "거의 아니다", "보통이다", "그렇다", "매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "개인적인 문제를 처리하는 능력에 대해 자신감을 느낀다. ",
+        question: "개인적인 문제를 처리하는 능력에 대해 자신감을 느낀다.",
         answers: ["전혀 아니다", "거의 아니다", "보통이다", "그렇다", "매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
@@ -344,7 +344,7 @@ List<Question> questions2_2() {
         answers: ["전혀 아니다", "거의 아니다", "보통이다", "그렇다", "매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: "매사를 잘 컨트롤하고 있다고 느낀다. ",
+        question: "매사를 잘 컨트롤하고 있다고 느낀다.",
         answers: ["전혀 아니다", "거의 아니다", "보통이다", "그렇다", "매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
@@ -369,7 +369,7 @@ List<Question> questions2_3() {
         answers: ["전혀 아니다", "거의 아니다", "보통이다", "그렇다", "매우 그렇다"],
         isMandatory: true),
     PolarQuestion(
-        question: " 자신에게 화가 난 이유를 알 수 있다. ",
+        question: "자신에게 화가 난 이유를 알 수 있다.",
         answers: ["전혀 아니다", "거의 아니다", "보통이다", "그렇다", "매우 그렇다"],
         isMandatory: true),
   ];

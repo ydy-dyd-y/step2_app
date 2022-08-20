@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "411824546929",
+    "firebase_url": "https://survey-pmdd-default-rtdb.firebaseio.com",
     "project_id": "survey-pmdd",
     "storage_bucket": "survey-pmdd.appspot.com"
   },
@@ -12,12 +13,7 @@
           "package_name": "com.example.myapp"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "411824546929-qucmdv6b04l7l6gvcvbjdtjuur6r02q3.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
           "current_key": "AIzaSyCwNP7citR8h17Kscn2tvGr8RpywpEJATg"
@@ -25,12 +21,26 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "411824546929-qucmdv6b04l7l6gvcvbjdtjuur6r02q3.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411824546929:android:e003986825724c897a27d0",
+        "android_client_info": {
+          "package_name": "com.pmdd.myapp1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwNP7citR8h17Kscn2tvGr8RpywpEJATg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
         }
       }
     }

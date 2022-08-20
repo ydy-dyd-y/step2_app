@@ -21,24 +21,31 @@ class _BoardpmState extends State<Boardpm> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
             Text(
-              '지금부터 자기 전까지 예상되는 기분/느낌을',
+              '지금부터 자기 전까지 예상되는',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 32,
+                fontSize: 24,
               ),
+              ),
+              Text(
+                '기분/느낌을',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                ),
               ),
             Text(
               '다음에 제시될 6가지 측면에서',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 32,
+                fontSize: 24,
               ),
               ),
             Text(
               '점수를 매겨주세요',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 32,
+                fontSize: 24,
               ),
               ),
             MaterialButton(

@@ -1,16 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
+
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import 'package:syncfusion_flutter_calendar/calendar.dart';
-import 'dart:collection';
-import 'dart:math';  // Random
-import 'package:intl/intl.dart';
+
 
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
@@ -18,9 +18,6 @@ import 'package:survey_pmdd/screens/dailycategory.dart';
 import 'package:survey_pmdd/screens/weekly.dart';
 import 'package:survey_pmdd/screens/info.dart';
 
-//import 'package:survey_pmdd/api/notification_api.dart'; 2022-07-06
-import 'screens/EMAam.dart';
-import 'screens/daily.dart';
 
 class CalScreen extends StatefulWidget {
   const CalScreen({Key? key}) : super(key: key);
@@ -31,6 +28,9 @@ class CalScreen extends StatefulWidget {
 
 class _CalScreenState extends State<CalScreen> {
 
+  late AndroidNotificationChannel channel;
+  late FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
+
   final isDialOpen = ValueNotifier(false);
 
   MeetingDataSource? _events;
@@ -40,40 +40,68 @@ class _CalScreenState extends State<CalScreen> {
   DataSnapshot? mense;
   dynamic data;
 
-/* 2022-07-06
-
   @override
   void initState() {
     super.initState();
 
-    NotificationApi.init(initScheduled: true);
-    listenNotifications();
-    listenNotifications2();
+    loadFCM();
 
-    ///   NotificationApi.showScheduledNotification(
-    ///     title: '9:30am',
-    ///     body: '아침 설문을 작성하실 시간입니다',
-    ///     scheduledDate: DateTime.now(),
-    ///   );
+    listenFCM();
   }
 
-  void listenNotifications() =>
-      NotificationApi.onNotifications.stream.listen(onClickedNotification);
+  void listenFCM() async {
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      RemoteNotification? notification = message.notification;
+      AndroidNotification? android = message.notification?.android;
+      if (notification != null && android != null && !kIsWeb) {
+        flutterLocalNotificationsPlugin.show(
+          notification.hashCode,
+          notification.title,
+          notification.body,
+          NotificationDetails(
+            android: AndroidNotificationDetails(
+              channel.id,
+              channel.name,
+              // TODO add a proper drawable resource to android, for now using
+              //      one that already exists in example app.
+              icon: 'launch_background',
+            ),
+          ),
+        );
+      }
+    });
+  }
 
-  void onClickedNotification(String? payload) =>
-      Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => EMAam()
-      ));
+  void loadFCM() async {
+    if (!kIsWeb) {
+      channel = const AndroidNotificationChannel(
+        'high_importance_channel', // id
+        'High Importance Notifications', // title
+        importance: Importance.high,
+        enableVibration: true,
+      );
 
+      flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
-  void listenNotifications2() =>
-      NotificationApi.onNotifications2.stream.listen(onClickedNotification2);
+      /// Create an Android Notification Channel.
+      ///
+      /// We use this channel in the `AndroidManifest.xml` file to override the
+      /// default FCM channel to enable heads up notifications.
+      await flutterLocalNotificationsPlugin
+          .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin>()
+          ?.createNotificationChannel(channel);
 
-  void onClickedNotification2(String? payload) =>
-      Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => Daily()
-      ));
-*/
+      /// Update the iOS foreground notification presentation options to allow
+      /// heads up notifications.
+      await FirebaseMessaging.instance
+          .setForegroundNotificationPresentationOptions(
+        alert: true,
+        badge: true,
+        sound: true,
+      );
+    }
+  }
 
 
   @override
